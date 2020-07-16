@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import utility.EligibiltyCheck;
-
+import utility.EligibiltyCheck;
 @WebServlet(urlPatterns= {"/eligiblemain"})
 public class Eligibility extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -18,6 +18,11 @@ public class Eligibility extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	String points=request.getParameter("points");
+
+	
+	EligibiltyCheck check = new EligibiltyCheck();
+	boolean spaceEligible =check.checkQuizAnswer(points);
+	
 	
 	if(false)
 	{

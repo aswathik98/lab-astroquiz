@@ -12,6 +12,10 @@ import model.User;
 import utility.BasicEligibility;
 import utility.EligibiltyCheck;
 
+
+import model.User;
+import utility.BasicEligibility;
+import utility.EligibiltyCheck;
 @WebServlet(urlPatterns= {"/eligible"})
 public class EligibilityViewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -45,6 +49,9 @@ public class EligibilityViewController extends HttpServlet {
 		user.setAge(age);
 		user.setHeight(height);
 		user.setWeight(weight);
+		
+		BasicEligibility obj = new EligibiltyCheck();
+		boolean spaceEligible = obj.basicEligibilityCheck(user);
 		
 		System.out.println(spaceEligible);
 			if(spaceEligible)
